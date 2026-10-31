@@ -10,6 +10,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { KineticText } from "../components/KineticText";
+import { AppleStyleText } from "../components/AppleStyleText";
 import { AnimatedBadge } from "../components/AnimatedBadge";
 import { VoxAnnotation } from "../components/VoxAnnotation";
 import { AtmosphereScale } from "../components/AtmosphereScale";
@@ -70,14 +71,15 @@ export const HowRainForms: React.FC = () => {
             <AnimatedBadge label="Sains Atmosfer • Vox Explainer" delay={5} color="#38BDF8" />
           </div>
 
-          {/* Question Headline */}
-          <div style={{ position: "absolute", top: "140px", maxWidth: "1200px" }}>
-            <KineticText
+          {/* Question Headline (Apple Keynote Style Mask Reveal & Motion Blur) */}
+          <div style={{ position: "absolute", top: "135px", width: "100%", display: "flex", justifyContent: "center" }}>
+            <AppleStyleText
               text="Kenapa Awan Seberat Ini Tidak Langsung Jatuh?"
               highlightWord="Seberat"
-              highlightColor="#38BDF8"
-              fontSize={54}
+              highlightGradient="linear-gradient(135deg, #38BDF8 0%, #818CF8 100%)"
+              fontSize={56}
               delay={12}
+              staggerFrames={4}
             />
           </div>
 
