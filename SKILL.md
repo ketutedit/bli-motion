@@ -123,8 +123,11 @@ Load only the specialist skills and references needed for the task.
 - references/creative-direction.md
 - templates/style-brief.md
 
-### Remotion implementation
+### Remotion implementation & Starter
 - references/remotion-production.md
+- starter/ (production starter kit with vector illustration components)
+- starter/src/components/ (SVGCharacter, MotionCard, ConnectorLine, KineticText)
+- examples/01-how-dns-works/ (benchmark test case)
 - consult the installed Remotion Agent Skills and documentation for exact APIs
 
 ### Reference supplied by a user

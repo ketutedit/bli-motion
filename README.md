@@ -40,6 +40,8 @@ Lihat references/reference-policy.md untuk sumber dan batasan penggunaan.
 ## Struktur repository
 
 - [Core Skill](SKILL.md)
+- [Starter Project (Remotion)](starter/README.md)
+- [Example Benchmark: How DNS Works](examples/01-how-dns-works/brief.md)
 - [Creative Direction](references/creative-direction.md)
 - [Anti-Slide Quality Gates](references/anti-slide-quality.md)
 - [Explainer Visual Recipes](references/explainer-visual-recipes.md)
