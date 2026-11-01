@@ -145,8 +145,23 @@ export const KidsDrinkingGuide: React.FC = () => {
       {/* ========================================================================= */}
       {/* SCENE 2: STEP 1 — DUDUK YANG RAPI (Frames 165 - 330 | 5.5s - 11.0s)        */}
       {/* ========================================================================= */}
-      <Sequence from={165} durationInFrames={165}>
-        <AbsoluteFill style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Sequence
+        from={165}
+        durationInFrames={165}
+        style={{
+          scale: 0.26,
+          backgroundColor: "rgba(255, 0, 0, 0)"
+        }}
+      >
+        <AbsoluteFill
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            scale: 0.75,
+            fontWeight: 600
+          }}
+        >
           {/* Top Step Card */}
           <div style={{ marginTop: "210px", width: "100%", display: "flex", justifyContent: "center" }}>
             <KidsStepCard

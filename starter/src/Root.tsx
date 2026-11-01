@@ -3,10 +3,21 @@ import { Composition } from "remotion";
 import { MainExplainer } from "./compositions/MainExplainer";
 import { HowRainForms } from "./compositions/HowRainForms";
 import { KidsDrinkingGuide } from "./compositions/KidsDrinkingGuide";
+import { StreamFlowPromo } from "./compositions/StreamFlowPromo";
 
 export const Root: React.FC = () => {
   return (
     <>
+      {/* 32-Second Promo Video: StreamFlow by Bang Tutorial */}
+      <Composition
+        id="StreamFlowPromo"
+        component={StreamFlowPromo}
+        durationInFrames={960} // 32 seconds @ 30fps
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
       {/* 33-Second Instagram Reels (9:16 Vertical): Cara Minum Air untuk Anak-Anak */}
       <Composition
         id="KidsDrinkingGuide"
