@@ -7,6 +7,7 @@
     "dev": "remotion studio",
     "build": "remotion render src/index.ts MainExplainer out/video.mp4",
     "render:rain": "remotion render src/index.ts HowRainForms out/hujan-terbentuk.mp4",
+    "render:kids": "remotion render src/index.ts KidsDrinkingGuide out/cara-minum-anak.mp4",
     "test:stills": "bash scripts/render-preview.sh",
     "upgrade": "remotion upgrade"
   },
