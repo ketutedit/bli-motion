@@ -58,6 +58,10 @@ Record critical failures separately. A severe factual, legibility, or rendering 
 
 ## Evidence to retain
 
+Use the [benchmark result template](results/REPORT-TEMPLATE.md) for each task and trial so A/B/C outcomes can be compared consistently.
+
+
+
 For each trial, retain:
 
 - model and settings;
