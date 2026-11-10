@@ -2,7 +2,7 @@
   "name": "bli-motion-starter",
   "version": "0.1.0",
   "private": true,
-  "description": "Starter Remotion template for BLI Motion AI Explainer Videos",
+  "description": "Remotion explainer example starter for BLI Motion",
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion render src/index.ts MainExplainer out/video.mp4",
@@ -11,15 +11,22 @@
     "render:streamflow": "remotion render src/index.ts StreamFlowPromo out/streamflow-promo.mp4",
     "render:bumil": "remotion render src/index.ts PregnancyTipsReel out/tips-bumil-trimester3.mp4",
     "test:stills": "bash scripts/render-preview.sh",
-    "upgrade": "remotion upgrade"
+    "typecheck": "tsc --noEmit",
+    "upgrade": "remotion upgrade",
+    "render:dns": "remotion render src/index.ts HowDnsWorks out/how-dns-works.mp4",
+    "test:dns-stills": "bash scripts/render-dns-preview.sh",
+    "render:ui": "remotion render src/index.ts ProductLoginMotion out/product-login-motion.mp4",
+    "render:abstract": "remotion render src/index.ts AbstractOrbitLoop out/abstract-orbit-loop.mp4",
+    "render:primitives": "remotion render src/index.ts MotionPrimitivesShowcase out/motion-primitives-showcase.mp4",
+    "test:primitives-still": "remotion still src/index.ts MotionPrimitivesShowcase out/motion-primitives-showcase.png --frame=120"
   },
   "dependencies": {
-    "@remotion/cli": "^4.0.0",
-    "@remotion/transitions": "^4.0.0",
+    "@remotion/cli": "4.0.542",
+    "@remotion/transitions": "4.0.542",
     "lucide-react": "^0.475.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "remotion": "^4.0.0"
+    "remotion": "4.0.542"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",

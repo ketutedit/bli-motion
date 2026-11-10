@@ -303,7 +303,8 @@ export const HowRainForms: React.FC = () => {
                   height: "260px",
                   borderRadius: "50%",
                   border: "3px dashed #38BDF8",
-                  animation: "spin 12s linear infinite",
+                  transform: `rotate(${(frame / fps) * 30}deg)`,
+                  transformOrigin: "center center",
                   opacity: 0.8,
                 }}
               />

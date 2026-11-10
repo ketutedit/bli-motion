@@ -1,21 +1,33 @@
 # Style Brief: How DNS Works
 
-## Visual Metaphor
-- **Dilema Manusia vs Komputer**: Manusia mengingat nama (`google.com`), komputer membaca angka IP (`142.250.190.46`).
-- **Analog Visual**: Mengubah nama menjadi kartu kontak digital bercahaya dengan ikon buku telepon/directory.
+## Art direction
 
-## Color Palette
-- **Background**: `#0B0F19` (Dark Tech Slate - memberi kontras tinggi pada ilustrasi)
-- **Primary / User**: `#38BDF8` (Sky Blue - melambangkan user & perangkat)
-- **DNS Server / Directory**: `#F59E0B` (Amber Gold - melambangkan direktori/buku telepon)
-- **Target Web Server**: `#10B981` (Emerald Green - melambangkan sukses terkoneksi)
-- **Text & UI**: `#F8FAFC` & `#94A3B8`
+A warm editorial explainer rather than a conventional dark technology dashboard. The visual language uses generous negative space, clear typography, paper-like warmth, a muted green directory panel, and a restrained coral accent.
+
+## Color roles
+
+- **Canvas:** `#F3F0E8` — warm neutral background.
+- **Primary text:** `#1D2528` — high-contrast ink.
+- **Supporting text:** `#687276` — secondary information.
+- **Domain / lookup accent:** `#D36F56` — coral.
+- **DNS directory:** `#E5E9E3` with muted green details.
+- **Destination server:** `#25353A` — deep neutral surface.
 
 ## Typography
-- **Headlines**: System UI / Inter, Bold 64px - 72px
-- **Annotations**: 20px - 24px SemiBold
 
-## Motion Language
-- **Karakter**: Masuk dengan elastic spring, kedip mata, dan gestur berpikir/bertanya.
-- **Data Flow**: Garis putus-putus berubah solid diikuti dot packet bercahaya saat request terkirim.
-- **Pacing**: Hook (0-4s) -> Mekanisme (4-11s) -> Kesimpulan & Hold (11-15s).
+Use a sans-serif system font stack with a bold, compact display headline and clear supporting labels. Prioritize legibility over decorative font effects.
+
+## Motion language
+
+- Browser request enters with a restrained upward movement.
+- DNS directory appears as a distinct information object.
+- The IP address is revealed only after the domain lookup begins.
+- Connection paths draw toward the destination server.
+- Final connection state holds long enough to read.
+
+## Avoid
+
+- A generic neon dashboard look.
+- Unnecessary particle effects.
+- Treating the DNS resolver as a physical web server.
+- Overloading the scene with extra network infrastructure not covered by the brief.

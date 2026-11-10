@@ -1,34 +1,72 @@
-# BLI Motion — Remotion Starter Template
+# BLI Motion — Remotion Example Starter
 
-Template resmi untuk merender video motion graphic explainer edukatif menggunakan Remotion dan komponen ilustrasi vektor.
+This folder contains sample Remotion compositions used to exercise selected BLI Motion capabilities. It is not a mandatory visual template and is not the universal engine for every project.
 
-## Fitur Utama
+## Included compositions
 
-- **Komponen Ilustrasi Vektor Built-in**:
-  - `SVGCharacter`: Karakter vektor flat dengan ekspresi wajah (happy, thinking, surprised), kedipan mata otomatis, dan bobbing physics.
-  - `ConnectorLine`: Garis alur sebab-akibat dengan animasi gambar path dan data packet yang bergerak.
-  - `MotionCard`: Kartu konsep dengan ikon Lucide, depth, glow, dan animasi spring.
-  - `KineticText`: Tipografi kinetik dinamis dengan highlight kata kunci berbasis beat audio/timeline.
-  - `AnimatedBadge`: Label kategori/topik yang muncul dinamis.
-- **Visual QA Pipeline**:
-  - Script `render-preview.sh` untuk mengekstrak frame kunci (stills) dalam 1 detik untuk verifikasi visual cepat tanpa perlu render seluruh video MP4.
+| Composition | Discipline | Duration | Format |
+|---|---|---:|---|
+| `HowDnsWorks` | Editorial explainer | 15 sec | 1920×1080 |
+| `ProductLoginMotion` | Product/UI motion | 12 sec | 1920×1080 |
+| `AbstractOrbitLoop` | Abstract procedural loop | 6 sec | 1080×1080 |
+| `HowRainForms` | Educational explainer | 45 sec | 1920×1080 |
+| `KidsDrinkingGuide` | Character-led educational video | 33 sec | 1080×1920 |
+| `PregnancyTipsReel` | Educational vertical video | 80 sec | 1080×1920 |
+| `StreamFlowPromo` | Product promo example | 32 sec | 1920×1080 |
+| `MainExplainer` | Legacy component demonstration | 10 sec | 1920×1080 |
 
-## Cara Menjalankan
+The first three are new examples for the 1.0 development branch. The remaining compositions are legacy or user-specific demonstrations and should not be treated as required visual styles.
 
-### 1. Pratinjau Interaktif (Remotion Studio)
+## Setup
+
 ```bash
+npm ci
 npm run dev
 ```
-Buka browser di URL yang muncul untuk melihat timeline, play/pause, dan inspeksi frame per frame secara realtime.
 
-### 2. Testing Render Preview Frame (Stills)
+Select a composition in Remotion Studio.
+
+## Render examples
+
+```bash
+npm run render:dns
+npm run render:ui
+npm run render:abstract
+npm run render:rain
+npm run render:kids
+npm run render:streamflow
+npm run render:bumil
+```
+
+## Preview frames
+
+For the legacy starter sample:
+
 ```bash
 npm run test:stills
 ```
-Frame kunci akan tersimpan di `out/stills/frame-*.png`.
 
-### 3. Render Video MP4 Penuh
+For the DNS explainer:
+
 ```bash
-npm run build
+npm run test:dns-stills
 ```
-Hasil video akan di-render ke `out/video.mp4`.
+
+Frame outputs are stored under `out/`.
+
+## Code validation
+
+```bash
+npm run typecheck
+npx remotion compositions src/index.ts
+```
+
+Type checking and composition discovery confirm basic code and entry-point integrity. They do not verify visual quality. Render and inspect the actual output, including full playback, before treating a composition as finished.
+
+## Components
+
+See [component principles](../components/README.md). Components such as `MotionCard`, `KineticText`, and `AnimatedBadge` are configurable starting points. Use them only when they fit the art direction; create bespoke elements when the concept calls for them.
+
+## Licensing and packaging
+
+Check the licenses and distribution rights for all third-party packages, fonts, images, video, audio, and copied agent guidance before redistributing or selling a starter. This starter includes user-specific example projects and media; do not assume all included assets are cleared for resale.

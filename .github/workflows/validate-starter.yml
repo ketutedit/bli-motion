@@ -1,0 +1,85 @@
+name: Validate Remotion Starter
+
+on:
+  push:
+    branches:
+      - bli-motion-1.0-dev
+    paths:
+      - "starter/**"
+      - ".github/workflows/validate-starter.yml"
+  pull_request:
+    paths:
+      - "starter/**"
+      - ".github/workflows/validate-starter.yml"
+
+concurrency:
+  group: validate-starter-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: TypeScript check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: starter
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: starter/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Capture npm audit report
+        run: npm audit --json > /tmp/bli-motion-npm-audit.json || true
+
+      - name: Upload npm audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-npm-audit
+          path: /tmp/bli-motion-npm-audit.json
+          if-no-files-found: error
+
+      - name: Type-check starter
+        run: npm run typecheck
+
+      - name: Discover Remotion compositions
+        run: npx remotion compositions src/index.ts
+
+      - name: Render visual smoke-test frames
+        run: |
+          npx remotion still src/index.ts HowDnsWorks /tmp/bli-motion-dns.png --frame=260 --log=warn
+          npx remotion still src/index.ts ProductLoginMotion /tmp/bli-motion-ui.png --frame=240 --log=warn
+          npx remotion still src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.png --frame=90 --log=warn
+          npx remotion still src/index.ts MotionPrimitivesShowcase /tmp/bli-motion-primitives.png --frame=120 --log=warn
+
+      - name: Render full smoke-test videos
+        run: |
+          npx remotion render src/index.ts HowDnsWorks /tmp/bli-motion-dns.mp4 --log=warn
+          npx remotion render src/index.ts ProductLoginMotion /tmp/bli-motion-ui.mp4 --log=warn
+          npx remotion render src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.mp4 --log=warn
+          npx remotion render src/index.ts MotionPrimitivesShowcase /tmp/bli-motion-primitives.mp4 --log=warn
+
+      - name: Upload rendered stills
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-visual-smoke-tests
+          path: /tmp/bli-motion-*.png
+          if-no-files-found: error
+
+      - name: Upload rendered videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-video-smoke-tests
+          path: /tmp/bli-motion-*.mp4
+          if-no-files-found: error

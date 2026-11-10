@@ -1,40 +1,33 @@
-# Storyboard: How DNS Works (15 Detik / 450 Frames @ 30 FPS)
+# Storyboard: How DNS Works
 
----
+**15 seconds · 450 frames · 30 fps · 1920×1080**
 
-### Scene 1: The Confusion (Frames 0 - 120 | Durasi 4.0s)
-- **Communication Goal**: Menjelaskan bahwa manusia mengingat nama, tapi komputer cuma tahu nomor IP.
-- **Voiceover**: "Pernah kepikiran nggak? Saat kamu mengetik nama website, komputer sebenarnya nggak paham nama itu."
-- **On-Screen Copy**: "Komputer Tidak Paham Nama Website" (Kinetic Text)
-- **Composition**: Karakter ilustrasi di tengah dengan tanda tanya mengambang, memegang laptop.
-- **State Awal**: Layar kosong, badge kategori pop-up.
-- **Aksi Gerak**: Karakter masuk dengan spring bouncing, teks judul meluncur ke atas per-kata. Balon teks nama website (`google.com`) muncul di atas laptop.
-- **State Akhir**: Karakter berkedip dengan ekspresi bingung (`expression="thinking"`).
-- **Transisi**: Balon teks nama website melayang ke kanan menjadi awal scene 2.
+The composition is built as a continuous visual explanation rather than three unrelated slides.
 
----
+## Beat 1 — A name is entered (Frames 0–132)
 
-### Scene 2: The Translation Mechanism (Frames 120 - 330 | Durasi 7.0s)
-- **Communication Goal**: Menunjukkan peran DNS sebagai penerjemah nama ke alamat IP.
-- **Voiceover**: "Di sinilah DNS bekerja. Mirip buku kontak di HP kamu, DNS menerjemahkan nama website menjadi alamat IP angka."
-- **On-Screen Copy**: "DNS: Buku Kontak Internet"
-- **Composition**: 3 Node horizontal: `[Laptop Kamu]` ----> `[Server DNS]` ----> `[Web Server]`.
-- **State Awal**: Laptop kamu di sebelah kiri, server DNS di tengah.
-- **Aksi Gerak**:
-  1. Garis konektor biru menyala dari Laptop menuju Server DNS.
-  2. Data paket terkirim. Server DNS memancarkan pulsa kuning amber.
-  3. Label `google.com` berubah menjadi angka IP `142.250.190.46`.
-  4. Garis hijau menghubungkan ke Server Web tujuan.
-- **State Akhir**: Jalur koneksi utuh, tanda centang hijau menyala.
-- **Transisi**: Kamera zoom-in perlahan ke status terkoneksi.
+- A short editorial headline establishes the question.
+- A browser address field appears with `example.com`.
+- The browser/request object is the visual focus.
+- The headline begins to clear as the DNS directory enters.
 
----
+## Beat 2 — DNS lookup (Frames 132–330)
 
-### Scene 3: The Takeaway (Frames 330 - 450 | Durasi 4.0s)
-- **Communication Goal**: Menegaskan kecepatan proses dan kesimpulan akhir.
-- **Voiceover**: "Semua proses pencarian ini selesai hanya dalam beberapa milidetik saja!"
-- **On-Screen Copy**: "Selesai dalam hitungan milidetik."
-- **Composition**: Karakter ilustrasi kembali ke tengah dengan ekspresi senang (`expression="happy"`), memegang badge hijau centang.
-- **State Awal**: Karakter masuk dengan spring ceria.
-- **Aksi Gerak**: Teks kesimpulan muncul dengan efek bounce, confetti partikel meluncur lembut di latar belakang.
-- **State Akhir**: Hold frame 1.5 detik agar penonton menyerap informasi sebelum video berakhir.
+- A muted green contact-directory panel appears.
+- The panel identifies itself as a DNS resolver.
+- The domain name is shown as the lookup key.
+- The example IP address `203.0.113.42` is revealed as the corresponding result.
+- The directory analogy supports the idea without pretending that DNS is a single physical phone book.
+
+## Beat 3 — The browser can connect (Frames 330–450)
+
+- A destination server appears.
+- A connection path is drawn from the lookup result toward the server.
+- The final label summarizes the relationship: Name → DNS lookup → IP address → Website.
+- The final state is held for comprehension.
+
+## Voiceover guidance (optional)
+
+"A browser starts with a name like example.com. A DNS resolver helps find the IP address associated with that name. With the address, the browser can connect to the destination server."
+
+This narration is a suggested guide, not audio included in the current composition.
