@@ -38,3 +38,6 @@ jobs:
 
       - name: Type-check starter
         run: npm run typecheck
+
+      - name: Discover Remotion compositions
+        run: npx remotion compositions src/index.ts
