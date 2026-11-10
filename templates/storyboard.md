@@ -1,54 +1,56 @@
-# Storyboard Template
+# BLI Motion — Sequence and Storyboard Template
+
+Use this template when a project benefits from planned shots, scenes, or states. It is optional: a single asset, short loop, or UI interaction may be better described with a state diagram or motion specification.
 
 ## Project brief
-- **Topic:**
+- **Intent / subject:**
 - **Audience:**
-- **Learning objective:**
-- **Core takeaway:**
+- **Main takeaway or experience:**
 - **Platform / aspect ratio:**
-- **Target duration:**
+- **Duration:**
 - **Language / tone:**
-- **Technical constraints:**
+- **User constraints and technical requirements:**
 
 ## Creative direction
 - **Concept:**
-- **Visual metaphor / organizing device:**
+- **Visual device / organizing idea:**
 - **Style and mood:**
-- **Color roles:**
-- **Typography:**
+- **Composition and focal hierarchy:**
+- **Color roles and typography:**
+- **Material / image treatment:**
 - **Motion language:**
 - **Why this direction fits:**
 
-## Narrative outline
-1. Hook:
-2. Context:
-3. Explanation:
-4. Key insight:
-5. Recap / payoff:
+## Sequence outline (choose only relevant beats)
+Examples include opening image, setup, interaction, reveal, transformation, comparison, climax, payoff, ending, or loop return. The sequence does not need to follow a fixed order.
 
-## Scene breakdown
+1. Beat / shot / state:
+2. Beat / shot / state:
+3. Beat / shot / state:
 
-Repeat this block for each scene.
+## Shot / scene / state breakdown
 
-### Scene [number] — [short title]
-- **Purpose:** What should the audience understand here?
-- **Duration:** Estimate or relative timing.
-- **Voiceover:**
-- **On-screen text:**
+Repeat this block only where useful.
+
+### [ID] — [short title]
+- **Purpose:** What should the viewer notice, understand, or feel?
+- **Duration / timing:**
+- **Narration / audio:** Optional.
+- **On-screen text:** Optional.
 - **Composition:** Layout, focal point, hierarchy, safe area.
-- **Visual elements:** Objects, shapes, icons, diagrams, characters.
-- **Action:** What happens, in what order?
-- **Motion specification:** Initial state → movement → final state; include timing/easing where known.
-- **Transition out:** How does this scene connect to the next?
-- **Audio cue:** Optional music or sound effect note.
-- **Production notes:** Assets, dependencies, or renderer constraints.
+- **Visual elements:** Objects, shapes, type, interface, images, diagrams, or characters.
+- **Initial state:**
+- **Action / interaction:**
+- **Motion specification:** Properties, direction, distance, timing, easing, overlap.
+- **Final state / hold:**
+- **Transition or loop behavior:**
+- **Assets / dependencies / production notes:**
 
-## Final quality check
-- [ ] One clear primary idea per scene.
-- [ ] Visuals explain rather than decorate.
-- [ ] Narration and visuals complement each other.
-- [ ] Text is readable at target size.
-- [ ] Timing allows comprehension.
-- [ ] Transitions support continuity.
-- [ ] Facts and data are verified.
-- [ ] All motions are feasible in the target engine.
+## Review
+- [ ] The visual idea serves the user's intent.
+- [ ] The hierarchy is clear at delivery size.
+- [ ] Motion has a reason and appropriate timing.
+- [ ] Text and critical details remain readable.
+- [ ] The sequence or interaction feels coherent.
+- [ ] Facts, data, and asset rights are handled correctly.
+- [ ] The implementation is feasible in the selected engine.
