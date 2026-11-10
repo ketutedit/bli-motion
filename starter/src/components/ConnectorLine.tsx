@@ -1,5 +1,5 @@
 import React from "react";
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 
 export interface ConnectorLineProps {
   startX: number;
@@ -8,9 +8,32 @@ export interface ConnectorLineProps {
   endY: number;
   delay?: number;
   color?: string;
+  strokeWidth?: number;
+  track?: boolean;
+  trackColor?: string;
+  trackWidth?: number;
+  trackDasharray?: string;
   showPacket?: boolean;
+  packetCount?: 0 | 1 | 2;
+  packetColor?: string;
+  packetRadius?: number;
+  packetPeriod?: number;
+  packetDelay?: number;
+  packetDirection?: "forward" | "reverse";
+  glow?: boolean;
+  reveal?: "spring" | "linear";
+  revealDurationInFrames?: number;
+  style?: React.CSSProperties;
 }
 
+const positiveModulo = (value: number, divisor: number) =>
+  ((value % divisor) + divisor) % divisor;
+
+/**
+ * A configurable straight connector for diagrams and motion graphics.
+ * Defaults preserve the legacy explainer look; turn off track, packets, or
+ * glow when a quieter editorial treatment is more appropriate.
+ */
 export const ConnectorLine: React.FC<ConnectorLineProps> = ({
   startX,
   startY,
@@ -18,107 +41,119 @@ export const ConnectorLine: React.FC<ConnectorLineProps> = ({
   endY,
   delay = 10,
   color = "#38BDF8",
+  strokeWidth = 3.5,
+  track = true,
+  trackColor = "rgba(255, 255, 255, 0.12)",
+  trackWidth = 3,
+  trackDasharray = "6 6",
   showPacket = true,
+  packetCount,
+  packetColor = "#FFFFFF",
+  packetRadius = 6,
+  packetPeriod = 24,
+  packetDelay = 10,
+  packetDirection = "forward",
+  glow = true,
+  reveal = "spring",
+  revealDurationInFrames = 18,
+  style,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const localFrame = frame - delay;
 
-  const drawProgress = spring({
-    frame: frame - delay,
-    fps,
-    config: { damping: 15, mass: 0.8 },
-  });
+  if (localFrame < 0) return null;
+
+  const drawProgress =
+    reveal === "spring"
+      ? spring({
+          frame: localFrame,
+          fps,
+          config: { damping: 15, mass: 0.8 },
+        })
+      : interpolate(localFrame, [0, Math.max(1, revealDurationInFrames)], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
 
   const clampedDraw = Math.min(Math.max(drawProgress, 0), 1);
-
-  // Looping continuous data packets
-  const packetStartFrame = delay + 10;
-  const loopPeriod = 24; // frames per packet loop (~0.8s)
-  const loopFrame = (frame - packetStartFrame) % loopPeriod;
-  const loopProgress = Math.max(0, loopFrame / loopPeriod);
-
-  // Second packet staggered by 12 frames
-  const loopFrame2 = (frame - packetStartFrame + 12) % loopPeriod;
-  const loopProgress2 = Math.max(0, loopFrame2 / loopPeriod);
-
   const currentX = startX + (endX - startX) * clampedDraw;
   const currentY = startY + (endY - startY) * clampedDraw;
+  const resolvedPacketCount = packetCount ?? (showPacket ? 2 : 0);
+  const packetStartFrame = delay + packetDelay;
+  const packetActive = frame >= packetStartFrame && clampedDraw >= 0.8;
+  const period = Math.max(1, packetPeriod);
+  const elapsed = frame - packetStartFrame;
 
-  const p1X = startX + (endX - startX) * loopProgress;
-  const p1Y = startY + (endY - startY) * loopProgress;
+  const getPacket = (index: number) => {
+    const offset = index * (period / 2);
+    const raw = positiveModulo(elapsed + offset, period) / period;
+    const progress = packetDirection === "forward" ? raw : 1 - raw;
+    return {
+      x: startX + (endX - startX) * progress,
+      y: startY + (endY - startY) * progress,
+    };
+  };
 
-  const p2X = startX + (endX - startX) * loopProgress2;
-  const p2Y = startY + (endY - startY) * loopProgress2;
-
-  if (frame < delay) return null;
+  const packetOne = getPacket(0);
+  const packetTwo = getPacket(1);
+  const lineFilter = glow ? `drop-shadow(0 0 6px ${color})` : undefined;
 
   return (
     <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
       style={{
         position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
+        inset: 0,
+        overflow: "visible",
         pointerEvents: "none",
         zIndex: 5,
+        ...style,
       }}
     >
-      <defs>
-        <filter id={`glow-${color.replace('#', '')}`} x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-      </defs>
+      {track && (
+        <line
+          x1={startX}
+          y1={startY}
+          x2={endX}
+          y2={endY}
+          stroke={trackColor}
+          strokeWidth={trackWidth}
+          strokeDasharray={trackDasharray}
+        />
+      )}
 
-      {/* Subtle guide track */}
-      <line
-        x1={startX}
-        y1={startY}
-        x2={endX}
-        y2={endY}
-        stroke="rgba(255, 255, 255, 0.12)"
-        strokeWidth="3"
-        strokeDasharray="6 6"
-      />
-
-      {/* Main neon wire */}
       <line
         x1={startX}
         y1={startY}
         x2={currentX}
         y2={currentY}
         stroke={color}
-        strokeWidth="3.5"
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
-        style={{
-          filter: `drop-shadow(0 0 6px ${color})`,
-        }}
+        style={lineFilter ? { filter: lineFilter } : undefined}
       />
 
-      {/* Continuous streaming packet 1 */}
-      {showPacket && frame >= packetStartFrame && clampedDraw >= 0.8 && (
+      {packetActive && resolvedPacketCount >= 1 && (
         <circle
-          cx={p1X}
-          cy={p1Y}
-          r="6"
-          fill="#FFFFFF"
-          style={{
-            filter: `drop-shadow(0 0 10px ${color})`,
-          }}
+          cx={packetOne.x}
+          cy={packetOne.y}
+          r={packetRadius}
+          fill={packetColor}
+          style={glow ? { filter: `drop-shadow(0 0 8px ${color})` } : undefined}
         />
       )}
 
-      {/* Continuous streaming packet 2 */}
-      {showPacket && frame >= packetStartFrame + 8 && clampedDraw >= 0.8 && (
+      {packetActive && resolvedPacketCount >= 2 && (
         <circle
-          cx={p2X}
-          cy={p2Y}
-          r="4.5"
+          cx={packetTwo.x}
+          cy={packetTwo.y}
+          r={packetRadius * 0.75}
           fill={color}
-          style={{
-            filter: `drop-shadow(0 0 8px #FFFFFF)`,
-          }}
+          style={glow ? { filter: "drop-shadow(0 0 6px #FFFFFF)" } : undefined}
         />
       )}
     </svg>
