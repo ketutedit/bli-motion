@@ -12,7 +12,9 @@
     "render:bumil": "remotion render src/index.ts PregnancyTipsReel out/tips-bumil-trimester3.mp4",
     "test:stills": "bash scripts/render-preview.sh",
     "typecheck": "tsc --noEmit",
-    "upgrade": "remotion upgrade"
+    "upgrade": "remotion upgrade",
+    "render:dns": "remotion render src/index.ts HowDnsWorks out/how-dns-works.mp4",
+    "test:dns-stills": "bash scripts/render-dns-preview.sh"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
