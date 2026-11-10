@@ -40,4 +40,4 @@ Remotion and its associated packages have specific license terms. Review the cur
 
 ## Existing BLI Motion resources
 
-The legacy explainer guide is available at [references/remotion-production.md](../../references/remotion-production.md). The bundled Remotion markup skill is at [starter/.agents/skills/remotion-markup/SKILL.md](../../starter/.agents/skills/remotion-markup/SKILL.md).
+The legacy explainer guide is available at [references/remotion-production.md](../../references/remotion-production.md). If the user has separately installed the official Remotion Agent Skill, consult that installation for detailed APIs and patterns. BLI Motion does not require or bundle that third-party skill in its core distribution.
