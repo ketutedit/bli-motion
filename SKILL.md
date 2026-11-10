@@ -96,7 +96,7 @@ Choose from the user's existing project and available environment first. Possibl
 - Three.js or React Three Fiber for interactive and rendered 3D;
 - After Effects scripts and expressions when an AE-native editable project is required.
 
-These are options, not a mandatory list. Confirm actual APIs and installed versions before relying on unfamiliar packages or properties. For Remotion, use [references/remotion-production.md](references/remotion-production.md) and the installed guidance at [starter/.agents/skills/remotion-markup/SKILL.md](starter/.agents/skills/remotion-markup/SKILL.md).
+These are options, not a mandatory list. Confirm actual APIs and installed versions before relying on unfamiliar packages or properties. For Remotion, use [references/remotion-production.md](references/remotion-production.md) and [engines/remotion/REFERENCE.md](engines/remotion/REFERENCE.md). If the user has separately installed a compatible Remotion Agent Skill, consult that installation too; BLI Motion's core distribution must not depend on bundling third-party agent guidance.
 
 ## Factual and asset integrity
 
