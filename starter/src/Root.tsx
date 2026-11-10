@@ -2,6 +2,8 @@ import React from "react";
 import { Composition } from "remotion";
 import { MainExplainer } from "./compositions/MainExplainer";
 import { HowDnsWorks } from "./compositions/HowDnsWorks";
+import { ProductLoginMotion } from "./compositions/ProductLoginMotion";
+import { AbstractOrbitLoop } from "./compositions/AbstractOrbitLoop";
 import { HowRainForms } from "./compositions/HowRainForms";
 import { KidsDrinkingGuide } from "./compositions/KidsDrinkingGuide";
 import { StreamFlowPromo } from "./compositions/StreamFlowPromo";
@@ -57,6 +59,26 @@ export const Root: React.FC = () => {
         durationInFrames={450}
         fps={30}
         width={1920}
+        height={1080}
+      />
+
+      {/* 12-Second Product UI login-to-dashboard study */}
+      <Composition
+        id="ProductLoginMotion"
+        component={ProductLoginMotion}
+        durationInFrames={360}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* 6-Second square abstract loop */}
+      <Composition
+        id="AbstractOrbitLoop"
+        component={AbstractOrbitLoop}
+        durationInFrames={180}
+        fps={30}
+        width={1080}
         height={1080}
       />
 
