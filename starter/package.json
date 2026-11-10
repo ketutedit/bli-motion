@@ -16,7 +16,9 @@
     "render:dns": "remotion render src/index.ts HowDnsWorks out/how-dns-works.mp4",
     "test:dns-stills": "bash scripts/render-dns-preview.sh",
     "render:ui": "remotion render src/index.ts ProductLoginMotion out/product-login-motion.mp4",
-    "render:abstract": "remotion render src/index.ts AbstractOrbitLoop out/abstract-orbit-loop.mp4"
+    "render:abstract": "remotion render src/index.ts AbstractOrbitLoop out/abstract-orbit-loop.mp4",
+    "render:primitives": "remotion render src/index.ts MotionPrimitivesShowcase out/motion-primitives-showcase.mp4",
+    "test:primitives-still": "remotion still src/index.ts MotionPrimitivesShowcase out/motion-primitives-showcase.png --frame=120"
   },
   "dependencies": {
     "@remotion/cli": "4.0.542",
