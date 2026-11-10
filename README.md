@@ -51,13 +51,22 @@ BLI Motion menggunakan tiga kelompok pembanding:
 
 Perbandingan harus menggunakan model, prompt, aset, dan lingkungan sedekat mungkin. Hasil render perlu ditinjau; penambahan file atau instruksi saja bukan bukti peningkatan kualitas.
 
-Lihat [benchmarks/README.md](benchmarks/README.md) dan [benchmarks/scoring-rubric.md](benchmarks/scoring-rubric.md).
+Lihat [benchmarks/README.md](benchmarks/README.md), [benchmark harness](benchmarks/harness/README.md), dan [scoring rubric](benchmarks/scoring-rubric.md).
+
+## Runnable examples
+
+The 1.0 development starter now includes:
+- [DNS explainer](examples/01-how-dns-works/README.md)
+- [Product UI motion](examples/02-product-ui-motion/README.md)
+- [Abstract orbit loop](examples/03-abstract-orbit-loop/README.md)
+
+These examples illustrate different art directions; none is a mandatory BLI Motion house style.
 
 ## Referensi dan atribusi
 
 BLI Motion mempelajari pendekatan organisasi skill dan produksi dari proyek publik, termasuk [Bang Motion](https://github.com/bangtutorial/bang-motion) dan [Remotion](https://github.com/remotion-dev/remotion). Referensi tersebut bukan izin otomatis untuk menyalin atau mendistribusikan ulang kode, aset, atau dokumentasinya.
 
-Periksa [references/reference-policy.md](references/reference-policy.md), lisensi proyek sumber, serta lisensi seluruh dependency dan aset sebelum mengemas versi komersial.
+Periksa [references/reference-policy.md](references/reference-policy.md), lisensi proyek sumber, serta lisensi seluruh dependency dan aset sebelum mengemas versi komersial. Lihat juga [DISTRIBUTION-READINESS.md](DISTRIBUTION-READINESS.md).
 
 ## Status pengembangan
 
