@@ -12,6 +12,10 @@ on:
       - "starter/**"
       - ".github/workflows/validate-starter.yml"
 
+concurrency:
+  group: validate-starter-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
