@@ -11,6 +11,9 @@
 
 ### Production examples and components
 - Make MotionCard, KineticText, and AnimatedBadge variants configurable while preserving legacy defaults.
+- Add neutral Reveal and MotionShape primitives for reusable entrances and geometric forms.
+- Make ConnectorLine track, stroke, glow, packet count, direction, and reveal behavior configurable.
+- Add a Motion Primitives Showcase composition and include it in still/video smoke validation.
 - Fix the opaque Solid overlay in the old MainExplainer starter.
 - Replace a CSS keyframe animation in HowRainForms with deterministic frame-driven rotation.
 - Add a new DNS explainer with aligned brief, storyboard, source entry point, and unverified visual QA checklist.
