@@ -1,6 +1,7 @@
 import React from "react";
 import { Composition } from "remotion";
 import { MainExplainer } from "./compositions/MainExplainer";
+import { HowDnsWorks } from "./compositions/HowDnsWorks";
 import { HowRainForms } from "./compositions/HowRainForms";
 import { KidsDrinkingGuide } from "./compositions/KidsDrinkingGuide";
 import { StreamFlowPromo } from "./compositions/StreamFlowPromo";
@@ -44,6 +45,16 @@ export const Root: React.FC = () => {
         id="HowRainForms"
         component={HowRainForms}
         durationInFrames={1350} // 45 seconds @ 30fps
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* 15-Second DNS explainer benchmark */}
+      <Composition
+        id="HowDnsWorks"
+        component={HowDnsWorks}
+        durationInFrames={450}
         fps={30}
         width={1920}
         height={1080}
