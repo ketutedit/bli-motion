@@ -2,7 +2,7 @@
   "name": "bli-motion-starter",
   "version": "0.1.0",
   "private": true,
-  "description": "Starter Remotion template for BLI Motion AI Explainer Videos",
+  "description": "Remotion explainer example starter for BLI Motion",
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion render src/index.ts MainExplainer out/video.mp4",
@@ -11,6 +11,7 @@
     "render:streamflow": "remotion render src/index.ts StreamFlowPromo out/streamflow-promo.mp4",
     "render:bumil": "remotion render src/index.ts PregnancyTipsReel out/tips-bumil-trimester3.mp4",
     "test:stills": "bash scripts/render-preview.sh",
+    "typecheck": "tsc --noEmit",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
