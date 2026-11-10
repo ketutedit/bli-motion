@@ -20,6 +20,8 @@ Use the clean [Remotion benchmark harness](harness/README.md) for all three grou
 
 The task prompt defines the dimensions, fps, duration, and content. Adjust the composition metadata in the harness to match the task before implementing the scene.
 
+For step-by-step instructions to run the three conditions fairly, see [RUNNING-TESTS.md](RUNNING-TESTS.md).
+
 ## Fixed task suite
 
 Use the exact prompts and delivery constraints in these files:
