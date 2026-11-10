@@ -20,7 +20,8 @@
 ### Benchmark and validation
 - Add six fixed A/B/C benchmark prompts and blind scoring rubric.
 - Add a clean Remotion benchmark harness with a pinned dependency graph and blank visual canvas.
-- Add CI for TypeScript checks and Remotion composition discovery.
+- Add CI for TypeScript checks, Remotion composition discovery, still renders, and MP4 smoke renders.
+- Refresh starter and benchmark lockfiles using semver-safe npm audit fixes; follow-up audit verification remains pending.
 - Add visual smoke-test frame rendering in the starter workflow.
 - Add commercial distribution readiness checklist covering IP, third-party material, assets, security, and marketplace packaging.
 
