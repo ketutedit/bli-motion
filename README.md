@@ -1,69 +1,72 @@
 # BLI Motion
 
-**BLI Motion** adalah AI Motion Graphic Skill System untuk membantu AI merancang motion graphic edukatif yang jelas, menarik, sinematik, dan siap diproduksi.
+**BLI Motion** adalah Universal AI Creative & Motion Design System untuk membantu AI menemukan ide visual, menentukan art direction, merancang gerakan, dan mewujudkan motion graphics melalui workflow produksi yang sesuai kebutuhan.
 
-BLI Motion bukan sekadar kumpulan prompt. Sistem ini menggabungkan creative direction, visual storytelling, motion design, storyboard, spesifikasi animasi, renderer, dan quality control.
+BLI Motion bukan template visual tetap dan bukan kumpulan prompt efek. Sistem ini mengarahkan model AI agar mengambil keputusan kreatif yang lebih spesifik, berani, dan terukur tanpa membatasi pengetahuan bawaan model.
 
-## Tujuan
+## Arah BLI Motion 1.0
 
-AI harus mampu:
-1. memahami materi dan audiens,
-2. menemukan konsep visual yang tepat,
-3. merancang cerita dan storyboard yang tidak terasa seperti slide presentasi,
-4. menentukan gerak yang punya fungsi komunikasi,
-5. menerjemahkan desain ke engine animasi,
-6. memeriksa frame hasil render dan memperbaikinya.
+- **Universal:** mendukung explainer, product/UI motion, kinetic typography, brand motion, abstract motion, infographic, dan character/2D/3D work.
+- **Creative-first:** kualitas ide, art direction, dan orisinalitas menjadi prioritas.
+- **High autonomy:** AI mengambil keputusan kreatif dan teknis yang wajar tanpa meminta persetujuan untuk setiap detail kecil.
+- **Renderer-independent:** konsep tidak dikunci pada Remotion atau satu teknologi.
+- **Evidence-based quality:** kualitas dinilai dari output aktual sejauh lingkungan produksi memungkinkan, bukan hanya dari kode atau klaim.
 
 ## Arsitektur
 
-- **SKILL.md** — instruksi inti dan router untuk memilih panduan yang relevan.
-- **skills/** — spesialis motion design, animation principles, visual storytelling, kinetic typography, infographic design, dan educational explainer.
-- **references/** — creative direction, anti-slide quality gates, resep visual explainer, panduan Remotion, dan kebijakan adaptasi referensi.
-- **templates/** — storyboard, struktur scene, dan style brief.
+- **SKILL.md** — router utama yang memahami tugas dan memuat pengetahuan relevan.
+- **core/** — creative intelligence, autonomy, adaptive workflow, art direction, motion intelligence, dan quality verification.
+- **modes/** — registry disiplin kreatif spesialis yang dikembangkan secara bertahap.
+- **skills/** — panduan spesialis dari fondasi 0.2.0 yang masih relevan dan digunakan secara selektif.
+- **references/** — creative direction, explainer recipes, Remotion production, reference policy, dan anti-slide guidance.
+- **templates/** — creative brief, storyboard, dan struktur scene.
+- **engines / starters** — target adapter dan starter lintas renderer yang akan dikembangkan pada tahap berikutnya.
+- **benchmarks/** — metodologi perbandingan, task families, dan rubrik evaluasi.
 
-## Pipeline
+## Prinsip kerja
 
-**Brief → Subject understanding → Creative direction → Storyboard → Motion specification → Renderer → Visual QA → Delivery**
+**Intent → Creative idea → Art direction → Motion design → Implementation → Preview / render → Critique → Refinement**
 
-Prinsip penting: AI menentukan ide visual sebelum memilih efek atau menulis kode. Storyboard tetap independen dari renderer agar konsep yang sama dapat diproduksi melalui HTML/GSAP, SVG/Canvas, atau Remotion.
+Urutan ini adaptif. Aset kecil atau loop sederhana tidak perlu melewati proses produksi video lengkap. Proyek kompleks menggunakan perencanaan dan pemeriksaan yang lebih mendalam.
 
-## Referensi yang dipelajari
+## Specialist scope
 
-BLI Motion mempelajari pola dan pendekatan dari:
-- [Bang Motion](https://github.com/bangtutorial/bang-motion) — agent skill, style brief, anti-slide design checks, explainer modes, starter architecture, dan frame-based visual verification.
-- [Remotion](https://github.com/remotion-dev/remotion) — React-based video composition, frame-driven animation, sequences, transitions, Studio preview, dan programmatic rendering.
+1. Explainer & visual storytelling
+2. Product & UI motion
+3. Kinetic typography & editorial
+4. Abstract & experimental motion
+5. Brand & logo motion
+6. Infographic & data motion
+7. Character & 2D/3D motion
 
-Referensi tersebut menjadi bahan belajar, bukan template visual yang harus disalin. BLI Motion mempertahankan identitas sendiri dengan fokus pada educational visual storytelling, akurasi materi, dan kemampuan berpindah renderer.
+Mode dapat digabung ketika proyek membutuhkannya. Tidak ada satu gaya visual yang wajib digunakan untuk semua mode.
 
-Lihat references/reference-policy.md untuk sumber dan batasan penggunaan.
+## Benchmark program
 
-## Struktur repository
+BLI Motion menggunakan tiga kelompok pembanding:
 
-- [Core Skill](SKILL.md)
-- [Starter Project (Remotion)](starter/README.md)
-- [Example Benchmark: How DNS Works](examples/01-how-dns-works/brief.md)
-- [Creative Direction](references/creative-direction.md)
-- [Anti-Slide Quality Gates](references/anti-slide-quality.md)
-- [Explainer Visual Recipes](references/explainer-visual-recipes.md)
-- [Remotion Production Guide](references/remotion-production.md)
-- [Style Brief Template](templates/style-brief.md)
-- [Storyboard Template](templates/storyboard.md)
-- [Scene Structure Template](templates/scene-structure.md)
+- A — model tanpa BLI Motion;
+- B — model dengan BLI Motion 0.2.0;
+- C — model dengan versi pengembangan 1.0.
 
-## Prinsip utama
+Perbandingan harus menggunakan model, prompt, aset, dan lingkungan sedekat mungkin. Hasil render perlu ditinjau; penambahan file atau instruksi saja bukan bukti peningkatan kualitas.
 
-- Pemahaman sebelum dekorasi.
-- Visual menjelaskan ide, bukan hanya mengulang narasi.
-- Motion punya alasan.
-- Ritme memberi waktu bagi penonton untuk memahami.
-- Desain konsisten tetapi tidak monoton.
-- Fakta dan data tidak boleh dikarang.
-- Kualitas dinilai dari frame hasil render, bukan dari kode yang sekadar berhasil berjalan.
+Lihat [benchmarks/README.md](benchmarks/README.md) dan [benchmarks/scoring-rubric.md](benchmarks/scoring-rubric.md).
 
-## Status
+## Referensi dan atribusi
 
-Fondasi awal BLI Motion sudah disusun. Tahap berikutnya adalah menambah contoh hasil, starter produksi original, validasi otomatis, dan renderer adapter yang bisa menghasilkan video secara konsisten.
+BLI Motion mempelajari pendekatan organisasi skill dan produksi dari proyek publik, termasuk [Bang Motion](https://github.com/bangtutorial/bang-motion) dan [Remotion](https://github.com/remotion-dev/remotion). Referensi tersebut bukan izin otomatis untuk menyalin atau mendistribusikan ulang kode, aset, atau dokumentasinya.
+
+Periksa [references/reference-policy.md](references/reference-policy.md), lisensi proyek sumber, serta lisensi seluruh dependency dan aset sebelum mengemas versi komersial.
+
+## Status pengembangan
+
+- **0.2.0:** fondasi awal yang berorientasi pada educational explainer.
+- **0.3.0 development:** perombakan creative-first core, autonomous decision policy, adaptive workflow, art direction, motion intelligence, quality verification, dan benchmark methodology.
+- **1.0.0:** direncanakan setelah specialist modes, renderer adapters, starter projects, serta benchmark dan validasi selesai.
+
+Branch pengembangan 1.0 dibuat terpisah agar versi 0.2.0 pada branch utama tetap utuh.
 
 ## Bahasa
 
-Instruksi internal menggunakan istilah teknis yang umum. Narasi, penjelasan, dan teks untuk audiens mengikuti bahasa yang diminta pengguna.
+Instruksi internal menggunakan istilah teknis yang umum. Bahasa narasi, penjelasan, label, dan teks hasil mengikuti bahasa yang diminta pengguna.
