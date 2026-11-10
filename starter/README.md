@@ -1,34 +1,48 @@
-# BLI Motion — Remotion Starter Template
+# BLI Motion — Remotion Explainer Starter
 
-Template resmi untuk merender video motion graphic explainer edukatif menggunakan Remotion dan komponen ilustrasi vektor.
+Ini adalah starter Remotion untuk contoh video explainer edukatif, bukan tema visual wajib atau starter universal untuk semua kategori BLI Motion.
 
-## Fitur Utama
+Contoh bawaan menggunakan karakter vektor, kartu konsep, konektor, dan kinetic typography. Komponen tersebut adalah titik awal yang dapat dimodifikasi. Jangan memaksakannya ke proyek UI, brand, abstract, atau typography yang membutuhkan pendekatan berbeda.
 
-- **Komponen Ilustrasi Vektor Built-in**:
-  - `SVGCharacter`: Karakter vektor flat dengan ekspresi wajah (happy, thinking, surprised), kedipan mata otomatis, dan bobbing physics.
-  - `ConnectorLine`: Garis alur sebab-akibat dengan animasi gambar path dan data packet yang bergerak.
-  - `MotionCard`: Kartu konsep dengan ikon Lucide, depth, glow, dan animasi spring.
-  - `KineticText`: Tipografi kinetik dinamis dengan highlight kata kunci berbasis beat audio/timeline.
-  - `AnimatedBadge`: Label kategori/topik yang muncul dinamis.
-- **Visual QA Pipeline**:
-  - Script `render-preview.sh` untuk mengekstrak frame kunci (stills) dalam 1 detik untuk verifikasi visual cepat tanpa perlu render seluruh video MP4.
+## Komponen bawaan
 
-## Cara Menjalankan
+- **SVGCharacter:** karakter vektor flat dengan ekspresi wajah dan gerakan idle sederhana.
+- **ConnectorLine:** garis hubungan dengan reveal dan paket data yang bergerak.
+- **MotionCard:** kartu konsep dengan ikon, depth, dan spring entrance.
+- **KineticText:** tipografi dengan reveal per kata.
+- **AnimatedBadge:** label kategori/topik.
 
-### 1. Pratinjau Interaktif (Remotion Studio)
+Starter ini menunjukkan satu arah visual demonstratif. Warna, layout, komponen, dan efek dapat diganti sesuai art direction proyek.
+
+## Cara menjalankan
+
+Pastikan dependency telah dipasang menggunakan package manager yang sesuai, lalu:
+
+### 1. Pratinjau interaktif (Remotion Studio)
+
 ```bash
 npm run dev
 ```
-Buka browser di URL yang muncul untuk melihat timeline, play/pause, dan inspeksi frame per frame secara realtime.
 
-### 2. Testing Render Preview Frame (Stills)
+### 2. Render still untuk pemeriksaan awal
+
 ```bash
 npm run test:stills
 ```
-Frame kunci akan tersimpan di `out/stills/frame-*.png`.
 
-### 3. Render Video MP4 Penuh
+Frame preview tersimpan di folder out/stills.
+
+### 3. Render video MP4
+
 ```bash
 npm run build
 ```
-Hasil video akan di-render ke `out/video.mp4`.
+
+Hasil video ditulis ke out/video.mp4.
+
+## Batasan
+
+- Periksa versi Remotion dan API yang benar-benar terpasang sebelum menambahkan fitur.
+- Periksa lisensi dependency, font, audio, gambar, dan aset pihak ketiga sebelum distribusi komersial.
+- Build yang berhasil belum membuktikan kualitas visual. Putar hasil render dan periksa frame penting.
+- Starter ini belum menjadi adapter produksi universal untuk semua mode BLI Motion.
