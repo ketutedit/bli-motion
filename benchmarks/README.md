@@ -14,6 +14,12 @@ Use the same model version, model settings, effort level, prompt, blank project,
 
 Run more than one trial per task when feasible. One attractive result is not sufficient evidence.
 
+## Shared project harness
+
+Use the clean [Remotion benchmark harness](harness/README.md) for all three groups. It has a blank canvas, a pinned dependency graph, and no BLI Motion visual components or sample assets. Start every group and every trial from an identical fresh copy.
+
+The task prompt defines the dimensions, fps, duration, and content. Adjust the composition metadata in the harness to match the task before implementing the scene.
+
 ## Fixed task suite
 
 Use the exact prompts and delivery constraints in these files:
@@ -25,7 +31,13 @@ Use the exact prompts and delivery constraints in these files:
 5. [Educational explainer](tasks/05-explainer.md)
 6. [Infographic and data motion](tasks/06-infographic.md)
 
-All tasks use the same Remotion project environment for comparability. Renderer selection across different technologies can be evaluated later as a separate experiment.
+Runnable examples in the main starter provide additional reference work, not benchmark starter assets:
+
+- [DNS explainer](../examples/01-how-dns-works/README.md)
+- [Product UI motion](../examples/02-product-ui-motion/README.md)
+- [Abstract orbit loop](../examples/03-abstract-orbit-loop/README.md)
+
+All benchmark tasks use the same Remotion environment for comparability. Renderer selection across different technologies can be evaluated later as a separate experiment.
 
 ## Blind review
 
