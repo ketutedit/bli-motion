@@ -17,7 +17,8 @@ export const HowDnsWorks: React.FC = () => {
   const directoryIn = spring({ frame: frame - 132, fps, config: { damping: 19, mass: 0.9 } });
   const lookupIn = spring({ frame: frame - 205, fps, config: { damping: 16, mass: 0.7 } });
   const serverIn = spring({ frame: frame - 330, fps, config: { damping: 18, mass: 0.8 } });
-  const routeProgress = interpolate(frame, [315, 380], [0, 1], clamp);
+  const requestProgress = interpolate(frame, [128, 188], [0, 1], clamp);
+  const connectionProgress = interpolate(frame, [320, 380], [0, 1], clamp);
   const titleOut = interpolate(frame, [112, 145], [1, 0], clamp);
   const resultOpacity = interpolate(frame, [205, 230], [0, 1], clamp);
   const finalOpacity = interpolate(frame, [365, 390], [0, 1], clamp);
@@ -70,12 +71,13 @@ export const HowDnsWorks: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          left: 145,
+          left: 100,
           top: 430,
-          width: 600,
+          width: 460,
           borderRadius: 22,
           backgroundColor: "#FFFFFF",
           border: "1px solid #D8D5CC",
+          zIndex: 2,
           boxShadow: "0 22px 55px rgba(29, 37, 40, 0.10)",
           overflow: "hidden",
           opacity: searchIn,
@@ -99,15 +101,16 @@ export const HowDnsWorks: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          left: 675,
+          left: 640,
           top: 385,
-          width: 555,
+          width: 590,
           opacity: directoryIn,
           transform: `translateY(${(1 - directoryIn) * 32}px) scale(${0.94 + directoryIn * 0.06})`,
           borderRadius: 24,
           background: "#E5E9E3",
           border: "1px solid #C8D2C9",
           padding: "28px 32px 30px",
+          zIndex: 2,
           boxShadow: "0 24px 60px rgba(29, 37, 40, 0.09)",
         }}
       >
@@ -135,27 +138,27 @@ export const HowDnsWorks: React.FC = () => {
         width="1920"
         height="1080"
         viewBox="0 0 1920 1080"
-        style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 1 }}
       >
         <path
-          d="M 735 520 C 780 520, 790 520, 840 520"
+          d="M 560 520 C 590 520, 610 520, 640 520"
           fill="none"
           stroke="#D36F56"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray="1"
           pathLength="1"
-          strokeDashoffset={1 - routeProgress}
+          strokeDashoffset={1 - requestProgress}
         />
         <path
-          d="M 1220 520 C 1280 520, 1315 520, 1375 520"
+          d="M 1230 520 C 1260 520, 1285 520, 1325 520"
           fill="none"
           stroke="#5C8D70"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray="1"
           pathLength="1"
-          strokeDashoffset={1 - interpolate(frame, [300, 370], [0, 1], clamp)}
+          strokeDashoffset={1 - connectionProgress}
         />
       </svg>
 
@@ -163,14 +166,14 @@ export const HowDnsWorks: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          left: 1375,
+          left: 1325,
           top: 423,
-          width: 395,
+          width: 460,
           opacity: serverIn,
           transform: `translateY(${(1 - serverIn) * 35}px) scale(${0.95 + 0.05 * serverIn})`,
         }}
       >
-        <div style={{ borderRadius: 22, background: "#25353A", color: "#F8F5ED", padding: "28px 30px 30px", boxShadow: "0 24px 60px rgba(29,37,40,0.18)" }}>
+        <div style={{ borderRadius: 22, background: "#25353A", color: "#F8F5ED", padding: "28px 30px 30px", boxShadow: "0 24px 60px rgba(29,37,40,0.18)", zIndex: 2 }}>
           <div style={{ color: "#B9C9BF", fontSize: 15, fontWeight: 700, letterSpacing: "0.13em" }}>DESTINATION SERVER</div>
           <div style={{ marginTop: 21, display: "flex", gap: 8, flexDirection: "column" }}>
             <div style={{ height: 10, width: "82%", borderRadius: 5, background: "#82958A" }} />
