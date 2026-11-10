@@ -1,0 +1,80 @@
+name: Refresh Remotion Dependencies
+
+on:
+  push:
+    branches:
+      - bli-motion-1.0-dev
+    paths:
+      - ".github/workflows/dependency-refresh.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-and-verify:
+    name: Upgrade and verify Remotion packages
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: starter
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Upgrade direct Remotion packages within the current major
+        run: npm install --save-exact @remotion/cli@4.0.542 @remotion/transitions@4.0.542 remotion@4.0.542
+
+      - name: Capture dependency audit report
+        run: npm audit --json > /tmp/bli-motion-npm-audit.json || true
+
+      - name: Type-check updated starter
+        run: npm run typecheck
+
+      - name: Discover registered compositions
+        run: npx remotion compositions src/index.ts
+
+      - name: Render representative frames
+        run: |
+          npx remotion still src/index.ts HowDnsWorks /tmp/bli-motion-dns.png --frame=260 --log=warn
+          npx remotion still src/index.ts ProductLoginMotion /tmp/bli-motion-ui.png --frame=240 --log=warn
+          npx remotion still src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.png --frame=90 --log=warn
+
+      - name: Render full smoke-test videos
+        run: |
+          npx remotion render src/index.ts HowDnsWorks /tmp/bli-motion-dns.mp4 --log=warn
+          npx remotion render src/index.ts ProductLoginMotion /tmp/bli-motion-ui.mp4 --log=warn
+          npx remotion render src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.mp4 --log=warn
+
+      - name: Upload dependency audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-npm-audit-remotion-542
+          path: /tmp/bli-motion-npm-audit.json
+          if-no-files-found: error
+
+      - name: Upload updated visual renders
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-updated-remotion-renders
+          path: /tmp/bli-motion-*.*
+          if-no-files-found: error
+
+      - name: Commit updated manifest and lockfiles
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: |
+          cp package-lock.json ../benchmarks/harness/package-lock.json
+          git -C .. config user.name "github-actions[bot]"
+          git -C .. config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C .. add starter/package.json starter/package-lock.json benchmarks/harness/package-lock.json
+          if git -C .. diff --cached --quiet; then
+            echo "Dependency manifest and lockfiles are already current."
+            exit 0
+          fi
+          git -C .. commit -m "fix: align Remotion packages on patched release"
+          git -C .. push origin "HEAD:${GITHUB_REF_NAME}"
