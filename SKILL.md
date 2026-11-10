@@ -38,7 +38,7 @@ The model supplies its general creative and technical capabilities. BLI Motion o
 ## Core decision flow
 
 1. **Interpret the task.** Identify deliverable, intent, audience, platform, constraints, assets, and relevant technical environment. Reuse information already provided.
-2. **Choose the creative lens.** Decide which discipline or combination is relevant. Use the specialist registry in [modes/README.md](modes/README.md) as the target taxonomy.
+2. **Choose the creative lens.** Select the smallest relevant specialist mode or combination from [modes/README.md](modes/README.md).
 3. **Develop a fitting idea.** Explore alternatives internally for non-trivial work, then select a strong direction. Show options only when useful or requested.
 4. **Set art direction.** Define only the visual-system decisions the project needs. See [core/art-direction.md](core/art-direction.md).
 5. **Design motion.** Choose choreography, timing, transitions, and camera behavior based on intent. See [core/motion-intelligence.md](core/motion-intelligence.md).
@@ -60,20 +60,30 @@ Read [core/autonomous-decision.md](core/autonomous-decision.md) when the task in
 
 Use [core/creative-workflow.md](core/creative-workflow.md) to choose between quick creation, focused design, and full production. The workflow is adaptive, not a fixed sequence every task must follow.
 
-## Specialist knowledge
+## Specialist modes
 
-Load only what is relevant. Do not load every specialist document by default.
+Load specialist guidance only when it adds domain-specific value:
 
-- **General motion design:** [skills/motion-design/SKILL.md](skills/motion-design/SKILL.md) when deeper visual-system guidance is useful.
-- **Animation principles:** [skills/animation-principles/SKILL.md](skills/animation-principles/SKILL.md) when motion behavior needs more detail.
-- **Explainers:** [skills/educational-explainer/SKILL.md](skills/educational-explainer/SKILL.md) and [references/explainer-visual-recipes.md](references/explainer-visual-recipes.md) when the task teaches a subject or explains a process.
-- **Typography:** [skills/kinetic-typography/SKILL.md](skills/kinetic-typography/SKILL.md) when type is a primary visual element.
-- **Data and diagrams:** [skills/infographic-design/SKILL.md](skills/infographic-design/SKILL.md) when information, scale, or comparisons must be visualized.
-- **Reference adaptation:** [references/reference-policy.md](references/reference-policy.md) when the user supplies visual references.
-- **Remotion:** [references/remotion-production.md](references/remotion-production.md) and the installed Remotion skill under [starter/.agents/skills/remotion-markup/SKILL.md](starter/.agents/skills/remotion-markup/SKILL.md) when Remotion is selected.
-- **Quality review:** [core/visual-quality.md](core/visual-quality.md) for critique and validation; [references/anti-slide-quality.md](references/anti-slide-quality.md) for explainer-specific anti-slide checks.
+- **Explainer & storytelling:** [modes/explainer/SKILL.md](modes/explainer/SKILL.md)
+- **Product & UI motion:** [modes/product-ui/SKILL.md](modes/product-ui/SKILL.md)
+- **Kinetic typography & editorial:** [modes/kinetic-typography/SKILL.md](modes/kinetic-typography/SKILL.md)
+- **Abstract & experimental motion:** [modes/abstract-motion/SKILL.md](modes/abstract-motion/SKILL.md)
+- **Brand & logo motion:** [modes/brand-motion/SKILL.md](modes/brand-motion/SKILL.md)
+- **Infographic & data motion:** [modes/infographic/SKILL.md](modes/infographic/SKILL.md)
+- **Character & 2D/3D motion:** [modes/character-motion/SKILL.md](modes/character-motion/SKILL.md)
 
-The universal specialist modes are being developed in stages. Do not pretend a mode document exists when it has not yet been implemented. If no specialist module applies, use the core system and the model's own domain knowledge.
+A project may combine modes. Do not load every mode by default, and do not force a mode when the task does not fit. The core system remains usable without specialist modules.
+
+Legacy 0.2.0 guidance remains available and should be loaded selectively where it adds useful detail:
+
+- [skills/motion-design/SKILL.md](skills/motion-design/SKILL.md) for additional motion-design principles;
+- [skills/animation-principles/SKILL.md](skills/animation-principles/SKILL.md) for detailed animation fundamentals;
+- [references/explainer-visual-recipes.md](references/explainer-visual-recipes.md) for explainer structures;
+- [skills/kinetic-typography/SKILL.md](skills/kinetic-typography/SKILL.md) and [skills/infographic-design/SKILL.md](skills/infographic-design/SKILL.md) for supplemental specialist details.
+
+## Reference adaptation
+
+Use [references/reference-policy.md](references/reference-policy.md) when the user supplies visual references or when third-party code, assets, or documentation may be reused. Preserve attribution and license obligations.
 
 ## Renderer selection
 
@@ -86,7 +96,7 @@ Choose from the user's existing project and available environment first. Possibl
 - Three.js or React Three Fiber for interactive and rendered 3D;
 - After Effects scripts and expressions when an AE-native editable project is required.
 
-These are options, not a mandatory list. Confirm actual APIs and installed versions before relying on unfamiliar packages or properties.
+These are options, not a mandatory list. Confirm actual APIs and installed versions before relying on unfamiliar packages or properties. For Remotion, use [references/remotion-production.md](references/remotion-production.md) and the installed guidance at [starter/.agents/skills/remotion-markup/SKILL.md](starter/.agents/skills/remotion-markup/SKILL.md).
 
 ## Factual and asset integrity
 
@@ -96,6 +106,6 @@ Respect ownership and license terms for supplied assets, third-party code, fonts
 
 ## Quality and completion
 
-Use [core/visual-quality.md](core/visual-quality.md) to inspect the real deliverable. Fix fundamental concept, hierarchy, readability, motion, and technical problems before decorative polish.
+Use [core/visual-quality.md](core/visual-quality.md) to inspect the real deliverable. For explainer-specific slide-deck checks, consult [references/anti-slide-quality.md](references/anti-slide-quality.md).
 
-Never claim a build, preview, render, playback check, or visual inspection that did not happen. If a tool or environment is unavailable, say exactly what could not be verified.
+Fix fundamental concept, hierarchy, readability, motion, and technical problems before decorative polish. Never claim a build, preview, render, playback check, or visual inspection that did not happen. If a tool or environment is unavailable, say exactly what could not be verified.
