@@ -40,6 +40,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Capture npm audit report
+        run: npm audit --json > /tmp/bli-motion-benchmark-audit.json || true
+
+      - name: Upload npm audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-benchmark-npm-audit
+          path: /tmp/bli-motion-benchmark-audit.json
+          if-no-files-found: error
+
       - name: Type-check harness
         run: npm run typecheck
 
