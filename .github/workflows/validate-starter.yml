@@ -57,6 +57,7 @@ jobs:
           npx remotion still src/index.ts HowDnsWorks /tmp/bli-motion-dns.png --frame=260 --log=warn
           npx remotion still src/index.ts ProductLoginMotion /tmp/bli-motion-ui.png --frame=240 --log=warn
           npx remotion still src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.png --frame=90 --log=warn
+          npx remotion still src/index.ts MotionPrimitivesShowcase /tmp/bli-motion-primitives.png --frame=120 --log=warn
 
       - name: Render full smoke-test videos
         run: |
