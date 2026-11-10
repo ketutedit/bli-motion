@@ -2,19 +2,19 @@
 
 BLI Motion is universal. Specialist modes are optional lenses that provide domain-specific decisions without forcing every project into one workflow.
 
-The core router should load only the smallest relevant set of modes. Modes may be combined when the project genuinely needs multiple disciplines.
+The core router should load only the smallest relevant set of modes. Modes may be combined when a project genuinely needs multiple disciplines.
 
-## Planned modes
+## Available development modes
 
-| Mode | Best for | Distinct decisions |
+| Mode | Skill file | Best for |
 |---|---|---|
-| Explainer & Storytelling | Educational, scientific, process, and editorial explainers | Narrative structure, causal visuals, metaphors, evidence |
-| Product & UI Motion | Apps, websites, dashboards, product demos | Interface states, hierarchy, interaction feedback, product behavior |
-| Kinetic Typography & Editorial | Type-led promos, title sequences, editorial graphics | Text composition, typographic rhythm, masks, readability |
-| Abstract & Experimental | Generative visuals, loops, visual experiments | Form systems, procedural behavior, rhythm, transformation |
-| Brand & Logo Motion | Identity reveals, bumpers, campaign graphics | Mark integrity, brand behavior, reveal logic |
-| Infographic & Data Motion | Charts, diagrams, maps, data stories | Data integrity, chart choice, annotation, comparison |
-| Character & 2D/3D Motion | Character animation and object-led scenes | Pose, silhouette, acting, weight, spatial interaction |
+| Explainer & Storytelling | [explainer/SKILL.md](explainer/SKILL.md) | Educational, scientific, process, and editorial explainers |
+| Product & UI Motion | [product-ui/SKILL.md](product-ui/SKILL.md) | Apps, websites, dashboards, onboarding, and product demos |
+| Kinetic Typography & Editorial | [kinetic-typography/SKILL.md](kinetic-typography/SKILL.md) | Type-led promos, title sequences, and editorial graphics |
+| Abstract & Experimental | [abstract-motion/SKILL.md](abstract-motion/SKILL.md) | Generative visuals, loops, and non-literal experiments |
+| Brand & Logo Motion | [brand-motion/SKILL.md](brand-motion/SKILL.md) | Identity reveals, bumpers, and campaign graphics |
+| Infographic & Data Motion | [infographic/SKILL.md](infographic/SKILL.md) | Charts, diagrams, maps, and data stories |
+| Character & 2D/3D Motion | [character-motion/SKILL.md](character-motion/SKILL.md) | Character animation and object-led scenes |
 
 ## Mode contract
 
@@ -29,6 +29,6 @@ Each specialist mode must:
 
 A mode is guidance, not a mandatory template. The AI may ignore irrelevant techniques and may combine modes.
 
-## Status
+## Development status
 
-This registry defines the target scope for BLI Motion 1.0. Specialist mode documents are introduced and tested in the specialization phase; the core skill must remain useful without them.
+These seven initial mode documents are drafted for the 0.3.0 development foundation. They are not yet independently benchmarked or certified as production-ready. Their next step is to gain task-specific benchmark cases and be refined against actual rendered outputs.
