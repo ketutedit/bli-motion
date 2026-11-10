@@ -44,13 +44,17 @@ Do not assume that an asset is redistributable just because it is visible in a p
 
 ## 4. Dependencies and security
 
-A later GitHub Actions audit of the current `starter/` lockfile (November 10, 2026; run [42905772562](https://github.com/ketutedit/bli-motion/actions/runs/42905772562)) reported **0 known vulnerabilities** across 300 dependency entries in the audited graph. This supersedes the earlier scan that reported 10 high-severity findings for an older dependency graph.
+GitHub Actions audits of both current lockfiles (November 10, 2026) reported **0 known vulnerabilities** across 300 dependency entries in each audited graph:
 
-- [x] Run and retain the `npm audit` JSON report for `starter/`; latest report: 0 info, 0 low, 0 moderate, 0 high, 0 critical.
-- [ ] Run and review the `npm audit` report for `benchmarks/harness/` (added to its CI workflow; result pending).
+- `starter/`: [audit workflow run 42905772562](https://github.com/ketutedit/bli-motion/actions/runs/42905772562).
+- `benchmarks/harness/`: [audit workflow run 42906243334](https://github.com/ketutedit/bli-motion/actions/runs/42906243334).
+
+These reports supersede the earlier scan that reported 10 high-severity findings for an older dependency graph.
+
+- [x] Run and retain the `npm audit` JSON report for `starter/`; 0 info, 0 low, 0 moderate, 0 high, 0 critical.
+- [x] Run and retain the `npm audit` JSON report for `benchmarks/harness/`; 0 info, 0 low, 0 moderate, 0 high, 0 critical.
 - [ ] Re-run audits before each commercial build because dependency advisories can change.
-- [ ] Identify whether any future findings are direct or transitive and whether they affect production or development use.
-- [x] Refresh the Remotion package versions and lockfile without forcing a major-version upgrade; retain reproducible dependency installation.
+- [x] Refresh the Remotion package versions and lockfiles without forcing a major-version upgrade; retain reproducible dependency installation.
 - [ ] Add a dependency notice and keep required third-party license texts with redistributed source where required.
 
 ## 5. Marketplace package
@@ -66,10 +70,11 @@ Before preparing an Agensi.io, Gumroad, or other marketplace ZIP:
 
 ## 6. Product quality gate
 
-- [ ] Run TypeScript checks.
-- [ ] Discover all Remotion compositions.
-- [ ] Render representative samples for each released specialist mode.
-- [ ] Review full playback, not just still frames.
+- [x] Run TypeScript checks for the starter and benchmark harness.
+- [x] Discover registered Remotion compositions in the starter and benchmark harness.
+- [x] Render four smoke-test examples (DNS, Product UI, abstract loop, and primitive showcase); this does not yet cover every specialist mode.
+- [ ] Review full playback and loop continuity, not just representative still frames.
+- [ ] Render representative samples for every specialist mode included in the commercial release.
 - [ ] Run the blind A/B/C benchmark and retain its evidence.
 - [ ] Fix critical rendering, legibility, factual, or compatibility defects.
 - [ ] Do not describe the product as 1.0-ready until the release gates have passed.
