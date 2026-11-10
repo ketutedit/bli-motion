@@ -1,65 +1,75 @@
 # Creative Direction — Decide Before You Animate
 
+> This document remains as a detailed companion to the BLI Motion 0.2.0 explainer references. For the universal 1.0 system, use [core/creative-intelligence.md](../core/creative-intelligence.md) and [core/art-direction.md](../core/art-direction.md) as the primary guidance.
+
 ## Purpose
-Turn a topic into a distinct visual idea before choosing layouts, colors, effects, or code. The creative direction should come from the subject and audience, not from whichever starter file or visual reference was opened most recently.
 
-## The creative director's decisions
-For every project, determine:
-1. **Core message:** What should the viewer understand or remember?
-2. **Audience:** What do they already know, and what will confuse them?
+Turn a subject and brief into a distinctive visual idea before choosing layouts, colors, effects, or code. Creative direction should come from the user's intent, subject, audience, and context—not from whichever starter file or visual reference was opened most recently.
+
+## Useful creative decisions
+
+Select the decisions relevant to the project:
+
+1. **Core intent:** What should the viewer understand, feel, notice, or do?
+2. **Audience:** What do they already know, and what may confuse them?
 3. **Emotional tone:** Curious, urgent, warm, playful, authoritative, mysterious, optimistic, or another specific feeling.
-4. **Narrative device:** A visual metaphor, journey, transformation, character, comparison, system map, timeline, or data story.
-5. **Visual language:** Shape vocabulary, color roles, typography, illustration/material treatment, texture, depth, and camera behavior.
-6. **Motion language:** How information enters, changes, connects, and leaves.
-7. **Signature moment:** One memorable visual event that expresses the idea rather than decorating it.
+4. **Visual device:** A metaphor, journey, transformation, character, comparison, interface state, system map, timeline, data story, typographic treatment, or abstract form.
+5. **Visual language:** Shape vocabulary, color roles, typography, image/material treatment, texture, depth, and camera behavior.
+6. **Motion language:** How information enters, changes, connects, reacts, and leaves.
+7. **Signature moment:** A memorable visual or motion event that expresses the idea rather than decorating it.
 
-## Generate concepts, not templates
-Before production, generate three genuinely different creative routes. Each candidate should state:
-- concept name and one-sentence premise,
-- how the subject will be visualized,
-- likely visual world and material treatment,
-- motion behavior,
-- why it fits the audience and message,
-- its main production risk.
+Not every project needs every decision. A small UI interaction does not need an explainer narrative, and a seamless abstract loop does not need a voiceover structure.
 
-Choose one recommendation and explain why. The alternatives must differ in their central visual idea, not merely swap colors.
+## Explore concepts proportionally
 
-For a short or straightforward request, keep this exploration compact. Do not burden the user with a long questionnaire. If the user has already specified a style, respect it and suggest refinements rather than replacing it.
+For non-trivial work, consider multiple genuinely different visual directions internally. Choose the strongest direction using relevance, originality, clarity, emotional fit, motion potential, and production feasibility.
 
-## Style brief
-Write a compact brief before building a complex animation:
-- **Topic / message:**
+Present alternatives only when the user requests options or when the creative choice materially affects the outcome. Do not require three written candidates for every project. Alternatives must differ in their central visual idea, not merely swap colors.
+
+If the user has already specified a style or reference, respect it and develop it rather than replacing it without a clear reason.
+
+## Compact style brief
+
+For complex work, record only the decisions that matter:
+
+- **Project / core intent:**
 - **Audience / platform / aspect ratio:**
 - **Emotional tone:**
-- **Recommended concept:**
-- **Visual metaphor or organizing device:**
-- **Palette:** base, primary, accent, semantic colors; note whether each comes from a supplied brand asset or is chosen for the topic.
-- **Typography:** display, supporting, labels / data; include legibility and fallback choices.
-- **Shape and illustration language:**
-- **Material / render family:** flat vector, paper collage, editorial photo, soft 3D, dimensional UI, sketch, mixed-media, or another intentional treatment.
-- **Background behavior:** texture, gradient, geometry, particles, environmental movement, or intentionally quiet.
-- **Camera language:** locked-off, tracking, orbit, push-in, pull-back, parallax, or scene-to-scene spatial travel.
-- **Motion signature:** one recurring motion behavior with a reason.
-- **Transition logic:** cut, match cut, object-led transition, wipe, camera move, or overlap; justify important transitions.
-- **Audio relationship:** voiceover, music, sound effects, silence, or beat-led timing.
-- **Production constraints:** renderer, assets, fonts, runtime, export format.
+- **Selected concept and rationale:**
+- **Visual device or organizing idea:**
+- **Palette and color roles:**
+- **Typography and readability:**
+- **Shape / illustration / image language:**
+- **Material / render family:**
+- **Background behavior:**
+- **Camera and depth:**
+- **Motion signature and timing character:**
+- **Transition logic:**
+- **Audio relationship:**
+- **Production constraints and assets:**
 
 ## Make style coherent, not repetitive
-A style system gives one video a recognizable identity. It does not mean every future video must use the same scene order, camera move, background, or transition.
+
+A style system gives one project a recognizable identity. It does not mean every future project must use the same scene order, camera move, background, or transition.
 
 For an ongoing series, preserve the channel's identity tokens while varying the visual metaphor and scene choreography. For unrelated projects, avoid reusing the same combination of palette, type treatment, background behavior, and motion signature by habit.
 
 ## Reference analysis
+
 When a user supplies a visual reference, extract its principles:
-- pacing and shot duration,
-- hierarchy of attention,
-- camera behavior,
-- motion quality,
-- transition motivation,
-- density and rhythm,
+
+- pacing and shot duration;
+- hierarchy of attention;
+- camera behavior;
+- motion quality;
+- transition motivation;
+- density and rhythm;
 - use of image, typography, and sound.
 
-Do not reproduce the reference's exact composition, text, assets, distinctive sequence, palette, or signature moment unless the user owns the material and explicitly requests a permitted adaptation. Make a new design that solves the same communication problem.
+Do not reproduce distinctive protected composition, text, assets, sequence, palette, or signature moments unless the user owns the material and explicitly requests a permitted adaptation. Make a new design that solves the same communication problem.
 
-## Stop conditions
-Do not start detailed implementation when the core message is unclear, the selected concept does not explain the subject, the style is only a list of effects, a required factual visual has no trustworthy source, or the proposed design cannot be produced in the chosen engine. Resolve the problem at the concept or storyboard level; do not hide it with more animation.
+## Reasons to pause before implementation
+
+Pause only when a missing decision would materially change the outcome: the core intent is unclear, the selected visual idea does not serve the subject, a required factual visual has no trustworthy source, or the implementation cannot be produced in the selected environment.
+
+Do not hide a concept problem with more effects.
