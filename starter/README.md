@@ -1,48 +1,72 @@
-# BLI Motion — Remotion Explainer Starter
+# BLI Motion — Remotion Example Starter
 
-Ini adalah starter Remotion untuk contoh video explainer edukatif, bukan tema visual wajib atau starter universal untuk semua kategori BLI Motion.
+This folder contains sample Remotion compositions used to exercise selected BLI Motion capabilities. It is not a mandatory visual template and is not the universal engine for every project.
 
-Contoh bawaan menggunakan karakter vektor, kartu konsep, konektor, dan kinetic typography. Komponen tersebut adalah titik awal yang dapat dimodifikasi. Jangan memaksakannya ke proyek UI, brand, abstract, atau typography yang membutuhkan pendekatan berbeda.
+## Included compositions
 
-## Komponen bawaan
+| Composition | Discipline | Duration | Format |
+|---|---|---:|---|
+| `HowDnsWorks` | Editorial explainer | 15 sec | 1920×1080 |
+| `ProductLoginMotion` | Product/UI motion | 12 sec | 1920×1080 |
+| `AbstractOrbitLoop` | Abstract procedural loop | 6 sec | 1080×1080 |
+| `HowRainForms` | Educational explainer | 45 sec | 1920×1080 |
+| `KidsDrinkingGuide` | Character-led educational video | 33 sec | 1080×1920 |
+| `PregnancyTipsReel` | Educational vertical video | 80 sec | 1080×1920 |
+| `StreamFlowPromo` | Product promo example | 32 sec | 1920×1080 |
+| `MainExplainer` | Legacy component demonstration | 10 sec | 1920×1080 |
 
-- **SVGCharacter:** karakter vektor flat dengan ekspresi wajah dan gerakan idle sederhana.
-- **ConnectorLine:** garis hubungan dengan reveal dan paket data yang bergerak.
-- **MotionCard:** kartu konsep dengan ikon, depth, dan spring entrance.
-- **KineticText:** tipografi dengan reveal per kata.
-- **AnimatedBadge:** label kategori/topik.
+The first three are new examples for the 1.0 development branch. The remaining compositions are legacy or user-specific demonstrations and should not be treated as required visual styles.
 
-Starter ini menunjukkan satu arah visual demonstratif. Warna, layout, komponen, dan efek dapat diganti sesuai art direction proyek.
-
-## Cara menjalankan
-
-Pastikan dependency telah dipasang menggunakan package manager yang sesuai, lalu:
-
-### 1. Pratinjau interaktif (Remotion Studio)
+## Setup
 
 ```bash
+npm ci
 npm run dev
 ```
 
-### 2. Render still untuk pemeriksaan awal
+Select a composition in Remotion Studio.
+
+## Render examples
+
+```bash
+npm run render:dns
+npm run render:ui
+npm run render:abstract
+npm run render:rain
+npm run render:kids
+npm run render:streamflow
+npm run render:bumil
+```
+
+## Preview frames
+
+For the legacy starter sample:
 
 ```bash
 npm run test:stills
 ```
 
-Frame preview tersimpan di folder out/stills.
-
-### 3. Render video MP4
+For the DNS explainer:
 
 ```bash
-npm run build
+npm run test:dns-stills
 ```
 
-Hasil video ditulis ke out/video.mp4.
+Frame outputs are stored under `out/`.
 
-## Batasan
+## Code validation
 
-- Periksa versi Remotion dan API yang benar-benar terpasang sebelum menambahkan fitur.
-- Periksa lisensi dependency, font, audio, gambar, dan aset pihak ketiga sebelum distribusi komersial.
-- Build yang berhasil belum membuktikan kualitas visual. Putar hasil render dan periksa frame penting.
-- Starter ini belum menjadi adapter produksi universal untuk semua mode BLI Motion.
+```bash
+npm run typecheck
+npx remotion compositions src/index.ts
+```
+
+Type checking and composition discovery confirm basic code and entry-point integrity. They do not verify visual quality. Render and inspect the actual output, including full playback, before treating a composition as finished.
+
+## Components
+
+See [component principles](../components/README.md). Components such as `MotionCard`, `KineticText`, and `AnimatedBadge` are configurable starting points. Use them only when they fit the art direction; create bespoke elements when the concept calls for them.
+
+## Licensing and packaging
+
+Check the licenses and distribution rights for all third-party packages, fonts, images, video, audio, and copied agent guidance before redistributing or selling a starter. This starter includes user-specific example projects and media; do not assume all included assets are cleared for resale.
