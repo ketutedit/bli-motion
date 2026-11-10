@@ -3,50 +3,66 @@
 ## Run metadata
 
 - **Workflow:** Validate Remotion Starter
-- **Run:** https://github.com/ketutedit/bli-motion/actions/runs/42829507363
-- **Branch:** bli-motion-1.0-dev
-- **Commit:** d539041cf9e19ac08243c94edfb268ae263b5657
-- **Result:** all three still renders completed and were uploaded as the `bli-motion-visual-smoke-tests` artifact.
+- **Run:** https://github.com/ketutedit/bli-motion/actions/runs/42905772562
+- **Branch:** `bli-motion-1.0-dev`
+- **Commit tested:** `43248abd0384bd0f842eb3fe8c172f4a236b2d92`
+- **Result:** successful TypeScript check, composition discovery, four still renders, four full MP4 renders, and artifact uploads.
+- **Artifacts:** `bli-motion-visual-smoke-tests` and `bli-motion-video-smoke-tests`.
 
-## Inspected frames
+## Inspected compositions
 
 ### DNS explainer
 
-- **Composition:** HowDnsWorks
-- **Frame:** 260 of 450
-- **Observation:** The browser domain field and DNS directory are visible. The example IP address is readable. The connector between browser request and resolver is visible. The destination server is intentionally scheduled later in the timeline, so it is not expected at this frame.
-- **Note:** The composition is intentionally sparse and editorial. Full-sequence pacing, the server entrance, and the final hold still need playback review.
+- **Composition:** `HowDnsWorks`
+- **Format:** 1920×1080, 30 fps, 15 seconds
+- **Sampled times:** 0.5s, 4s, 7s, 10s, 14.5s
+- **Observation:** The opening establishes the question and browser domain. The DNS directory reveals the documentation-range IP address. The destination server and final relationship appear later in the timeline. Labels remain readable in the sampled frames and no major clipping is visible.
+- **Still requiring review:** Full playback pacing and the final hold.
 
 ### Product UI
 
-- **Composition:** ProductLoginMotion
-- **Frame:** 240 of 360
-- **Observation:** The dashboard state is visible. Main heading, status cards, task list, and product identity appear legible at 1920×1080 with no obvious overlap in this still.
-- **Note:** The login and loading states, click timing, and transition need separate frame inspection or full playback.
+- **Composition:** `ProductLoginMotion`
+- **Format:** 1920×1080, 30 fps, 12 seconds
+- **Sampled times:** 0.5s, 3s, 5s, 7s, 9s, 11.5s
+- **Observation:** The sequence includes the product intro, login form, loading state, and dashboard. The dashboard hierarchy, status cards, and task list remain legible in the sampled frames. No major overlap or clipping is visible.
+- **Still requiring review:** Cursor timing, click feedback, and the full transition path in continuous playback.
 
 ### Abstract loop
 
-- **Composition:** AbstractOrbitLoop
-- **Frame:** 90 of 180
-- **Observation:** The geometric forms are visible, balanced, and contained within the square frame. No obvious clipping is present in this still.
-- **Note:** A still cannot prove loop continuity. Inspect frame 0 against frame 179 and play multiple consecutive loops before calling it seamless.
+- **Composition:** `AbstractOrbitLoop`
+- **Format:** 1080×1080, 30 fps, 6 seconds
+- **Sampled times:** 0s, 1.5s, 3s, 4.5s, 5.966s
+- **Observation:** Geometric forms stay inside the frame. The visual grammar remains consistent while the orbiting forms change position and orientation.
+- **Still requiring review:** Compare the exact loop boundary in playback and play multiple consecutive cycles before describing it as seamless.
+
+### Motion primitives showcase
+
+- **Composition:** `MotionPrimitivesShowcase`
+- **Format:** 1920×1080, 30 fps, 8 seconds
+- **Sampled times:** 0.5s, 2s, 4s, 6s, 7.5s
+- **Observation:** The `Reveal`, `MotionShape`, and `ConnectorLine` primitives render with distinct reveal behaviors, configurable geometric forms, and a moving packet. The composition stays within the frame and provides a neutral component demonstration rather than a mandatory house style.
+- **Still requiring review:** Full timing and easing in continuous playback.
 
 ## What this verifies
 
-- Remotion could discover the registered compositions.
-- The TypeScript check and composition discovery steps passed in CI.
-- Remotion could render a representative still from each of the three new composition types.
-- Representative frames were visually inspected.
+- The starter TypeScript check passed.
+- Remotion discovered the registered compositions.
+- Remotion rendered representative stills for all four compositions.
+- Remotion rendered full MP4 files for all four compositions.
+- The stills and MP4 files were uploaded as GitHub Actions artifacts.
+- Representative frames extracted from the MP4s were visually inspected; no major clipping, blank output, or obvious element collision was found in the samples.
 
 ## What this does not verify
 
-- Full MP4 renders or complete playback.
-- Timing and motion quality across the entire timeline.
-- Seamless loop continuity.
-- Audio synchronization.
-- The A/B/C benchmark comparison.
-- Commercial clearance of assets or dependencies.
+- A human review of every frame or uninterrupted full playback of all four videos.
+- Seamless loop continuity across repeated playback.
+- Audio synchronization or sound design.
+- The A/B/C comparison against Claude without the skill and BLI Motion 0.2.0.
+- Rendering quality for every specialist mode and every target renderer.
+- Commercial clearance of third-party code, sample media, fonts, icons, audio, or other assets.
 
 ## Overall result
 
-**Visual smoke test: passed. Production visual QA: still open.** The smoke frames show that the new examples render and have distinct art directions, but they are not a substitute for full playback review or blind benchmark trials.
+**Smoke build and render: passed. Sample-frame visual review: passed. Production visual QA: still open.**
+
+The four compositions render and demonstrate different visual directions. This is evidence that the examples and current starter work technically; it is not evidence yet that BLI Motion 1.0 consistently outperforms the base model or is ready for commercial release.
