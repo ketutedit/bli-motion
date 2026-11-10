@@ -33,7 +33,8 @@
 - **Format:** 1080×1080, 30 fps, 6 seconds
 - **Sampled times:** 0s, 1.5s, 3s, 4.5s, 5.966s
 - **Observation:** Geometric forms stay inside the frame. The visual grammar remains consistent while the orbiting forms change position and orientation.
-- **Still requiring review:** Compare the exact loop boundary in playback and play multiple consecutive cycles before describing it as seamless.
+- **Boundary check:** The decoded frame at 0s and the last frame at 5.966s were compared; the normalized mean absolute pixel difference was approximately 0.0066 (0–1 scale), and no large visual jump was apparent in the still comparison.
+- **Still requiring review:** Play multiple consecutive cycles before describing the loop as seamless; a frame comparison alone cannot prove playback continuity.
 
 ### Motion primitives showcase
 
