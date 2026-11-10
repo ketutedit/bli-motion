@@ -39,7 +39,7 @@ The model supplies its general creative and technical capabilities. BLI Motion o
 
 1. **Interpret the task.** Identify deliverable, intent, audience, platform, constraints, assets, and relevant technical environment. Reuse information already provided.
 2. **Choose the creative lens.** Select the smallest relevant specialist mode or combination from [modes/README.md](modes/README.md).
-3. **Develop a fitting idea.** Explore alternatives internally for non-trivial work, then select a strong direction. Show options only when useful or requested.
+3. **Develop a fitting idea.** Explore alternatives internally for non-trivial work, then select a strong direction. Show options only when useful or requested. Use [core/creative-intelligence.md](core/creative-intelligence.md) for concept exploration and selection.
 4. **Set art direction.** Define only the visual-system decisions the project needs. See [core/art-direction.md](core/art-direction.md).
 5. **Design motion.** Choose choreography, timing, transitions, and camera behavior based on intent. See [core/motion-intelligence.md](core/motion-intelligence.md).
 6. **Choose implementation.** Select the lightest suitable renderer after the visual requirements are understood.
