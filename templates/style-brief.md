@@ -1,70 +1,41 @@
-# BLI Motion — Style Brief
+# BLI Motion — Creative Brief
 
-## Project
-- **Topic:**
-- **Core message:**
+Use this template for complex projects. Skip sections that do not apply; do not turn the brief into a mandatory questionnaire.
+
+## Project intent
+- **Project / subject:**
+- **What the output should achieve:**
 - **Audience:**
 - **Platform / aspect ratio:**
-- **Duration:**
+- **Duration or loop behavior:**
+- **Required content / exact copy:**
+- **User constraints / brand rules:**
 - **Voiceover / music / sound:**
-- **Technical renderer:**
 
-## Audience and learning goal
-- **What the audience already knows:**
-- **What they need to understand:**
-- **Likely misconception:**
-- **One takeaway to remember:**
-
-## Creative candidates
-### Candidate A
-- **Concept:**
-- **Visual device:**
-- **Motion behavior:**
-- **Strength / risk:**
-
-### Candidate B
-- **Concept:**
-- **Visual device:**
-- **Motion behavior:**
-- **Strength / risk:**
-
-### Candidate C
-- **Concept:**
-- **Visual device:**
-- **Motion behavior:**
-- **Strength / risk:**
-
-## Selected direction
-- **Recommended concept:**
+## Creative direction
+- **Selected concept:**
 - **Why it fits:**
-- **Narrative structure:**
-- **Visual metaphor / organizing device:**
-
-## Art direction
-- **Mood:**
-- **Palette and source:**
-- **Display typography:**
-- **Supporting typography:**
-- **Shape language:**
-- **Illustration / image treatment:**
-- **Material / render family:**
-- **Background behavior:**
-- **Depth and camera language:**
+- **Emotional tone:**
+- **Visual device or organizing idea:**
+- **Composition and focal hierarchy:**
+- **Palette and color roles:**
+- **Typography and readability:**
+- **Shape / image / illustration language:**
+- **Material / lighting / depth:**
+- **Camera behavior:**
 - **Motion signature:**
 - **Transition logic:**
-- **One memorable moment:**
+- **Signature moment:**
 
 ## Production notes
-- **Required assets:**
-- **Factual sources:**
 - **Renderer / implementation:**
+- **Required assets and fonts:**
+- **Factual sources, if applicable:**
 - **Frame rate / dimensions:**
 - **Export format:**
-- **Known limitations:**
+- **Known constraints or assumptions:**
 
-## Approval checkpoint
-- [ ] Core message is clear.
-- [ ] The concept actually explains the subject.
-- [ ] Visual language is coherent and not copied from a reference.
-- [ ] The approach is technically feasible.
-- [ ] The user has approved the direction or assumptions are explicitly stated.
+## Review notes (optional)
+- **What is working:**
+- **What needs improvement:**
+- **Open decision that needs user input:**
