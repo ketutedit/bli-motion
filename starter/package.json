@@ -9,6 +9,7 @@
     "render:rain": "remotion render src/index.ts HowRainForms out/hujan-terbentuk.mp4",
     "render:kids": "remotion render src/index.ts KidsDrinkingGuide out/cara-minum-anak.mp4",
     "render:streamflow": "remotion render src/index.ts StreamFlowPromo out/streamflow-promo.mp4",
+    "render:bumil": "remotion render src/index.ts PregnancyTipsReel out/tips-bumil-trimester3.mp4",
     "test:stills": "bash scripts/render-preview.sh",
     "upgrade": "remotion upgrade"
   },
