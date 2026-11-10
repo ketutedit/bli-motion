@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { MousePointer2 } from "lucide-react";
 
 const clamp = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
 
@@ -13,8 +14,8 @@ export const ProductLoginMotion: React.FC = () => {
   const dashboardIn = interpolate(frame, [182, 212], [0, 1], clamp);
   const buttonPress = interpolate(frame, [112, 120, 132, 142], [1, 0.97, 0.97, 1], clamp);
   const loadingOpacity = interpolate(frame, [138, 145, 178, 188], [0, 1, 1, 0], clamp);
-  const cursorX = interpolate(frame, [70, 110, 120, 150], [1040, 810, 810, 810], clamp);
-  const cursorY = interpolate(frame, [70, 110, 120, 150], [780, 704, 704, 704], clamp);
+  const cursorX = interpolate(frame, [70, 110, 120, 150], [1070, 1505, 1505, 1505], clamp);
+  const cursorY = interpolate(frame, [70, 110, 120, 150], [790, 685, 685, 685], clamp);
   const dashboardCard = spring({ frame: frame - 220, fps, config: { damping: 18, mass: 0.7 } });
 
   return (
@@ -167,7 +168,19 @@ export const ProductLoginMotion: React.FC = () => {
       </div>
 
       {/* Cursor is decorative evidence of the interaction path, not a real input. */}
-      <div style={{ position: "absolute", left: cursorX, top: cursorY, width: 25, height: 25, borderRadius: "50%", background: "#D47B58", border: "3px solid #FFFFFF", boxShadow: "0 3px 13px rgba(0,0,0,0.22)", opacity: interpolate(frame, [65, 75, 150, 164], [0, 1, 1, 0], clamp), pointerEvents: "none" }} />
+      <div
+        style={{
+          position: "absolute",
+          left: cursorX,
+          top: cursorY,
+          zIndex: 40,
+          opacity: interpolate(frame, [65, 75, 150, 164], [0, 1, 1, 0], clamp),
+          pointerEvents: "none",
+          filter: "drop-shadow(0 3px 5px rgba(0, 0, 0, 0.25))",
+        }}
+      >
+        <MousePointer2 size={30} color="#FFFFFF" fill="#D47B58" strokeWidth={1.8} />
+      </div>
 
       <div style={{ position: "absolute", left: 80, bottom: 55, color: "#7A857E", fontSize: 14, fontWeight: 800, letterSpacing: "0.12em" }}>
         PRODUCT UI / STATE TRANSITION STUDY
