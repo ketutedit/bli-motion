@@ -75,7 +75,6 @@ export const AppleStyleText: React.FC<AppleStyleTextProps> = ({
                   display: "inline-block",
                   color: isHighlight ? "transparent" : textColor,
                   backgroundImage: isHighlight ? highlightGradient : undefined,
-                  WebkitBackgroundImage: isHighlight ? highlightGradient : undefined,
                   WebkitBackgroundClip: isHighlight ? "text" : undefined,
                   backgroundClip: isHighlight ? "text" : undefined,
                   transform: `translateY(${translateY}%)`,
