@@ -12,6 +12,10 @@ on:
       - "benchmarks/harness/**"
       - ".github/workflows/validate-benchmark-harness.yml"
 
+concurrency:
+  group: validate-benchmark-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
