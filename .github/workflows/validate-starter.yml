@@ -64,6 +64,7 @@ jobs:
           npx remotion render src/index.ts HowDnsWorks /tmp/bli-motion-dns.mp4 --log=warn
           npx remotion render src/index.ts ProductLoginMotion /tmp/bli-motion-ui.mp4 --log=warn
           npx remotion render src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.mp4 --log=warn
+          npx remotion render src/index.ts MotionPrimitivesShowcase /tmp/bli-motion-primitives.mp4 --log=warn
 
       - name: Upload rendered stills
         uses: actions/upload-artifact@v4
