@@ -48,9 +48,22 @@ jobs:
           npx remotion still src/index.ts ProductLoginMotion /tmp/bli-motion-ui.png --frame=240 --log=warn
           npx remotion still src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.png --frame=90 --log=warn
 
-      - name: Upload rendered smoke-test frames
+      - name: Render full smoke-test videos
+        run: |
+          npx remotion render src/index.ts HowDnsWorks /tmp/bli-motion-dns.mp4 --log=warn
+          npx remotion render src/index.ts ProductLoginMotion /tmp/bli-motion-ui.mp4 --log=warn
+          npx remotion render src/index.ts AbstractOrbitLoop /tmp/bli-motion-abstract.mp4 --log=warn
+
+      - name: Upload rendered stills
         uses: actions/upload-artifact@v4
         with:
           name: bli-motion-visual-smoke-tests
           path: /tmp/bli-motion-*.png
+          if-no-files-found: error
+
+      - name: Upload rendered videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: bli-motion-video-smoke-tests
+          path: /tmp/bli-motion-*.mp4
           if-no-files-found: error
